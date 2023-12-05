@@ -11,5 +11,32 @@ function validateName() {
 
   if (name.lenght == 0) {
     nameError.innerHTML = 'Name is Required';
+    return false;
   }
+  if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
+    nameError.innerHTML = 'Write Full name';
+    return false;
+  }
+  nameError.innerHTML = '<ion-icon id="i" name="checkmark-outline"></ion-icon>';
+  return true;
+}
+
+function validatePhone() {
+  var phone = document.getElementById('contact-phone').value;
+
+  if (phone.lenght == 0) {
+    phoneError.innerHTML = 'Phone No is required';
+    return false;
+  }
+  if (phone.lenght !== 10) {
+    phoneError.innerHTML = 'Phone no should be 10 digits';
+    return false;
+  }
+  if (!phone.match(/^[0-9]{10}$/)) {
+    phoneError.innerHTML = 'Only digits Please';
+    return false;
+  }
+  phoneError.innerHTML =
+    '<ion-icon id="i" name="checkmark-outline"></ion-icon>';
+  return true;
 }

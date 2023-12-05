@@ -92,3 +92,8 @@ form button {
 #Submit-error {
   color: red;
 }
+
+#i {
+  font-size: 19px;
+  color: seagreen;
+}
