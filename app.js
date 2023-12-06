@@ -40,3 +40,19 @@ function validatePhone() {
     '<ion-icon id="i" name="checkmark-outline"></ion-icon>';
   return true;
 }
+
+function validateEmail() {
+  var email = document.getElementById('contact-email').value;
+
+  if (email.lenght == 0) {
+    emailError.innerHTML = 'Email is required';
+    return false;
+  }
+  if (!email.match(/^[A-Za-z\._\-{0-9}*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+    emailError.innerHTML = 'Email invalid';
+    return false;
+  }
+  emailError.innerHTML =
+    '<ion-icon id="i" name="checkmark-outline"></ion-icon>';
+  return true;
+}
